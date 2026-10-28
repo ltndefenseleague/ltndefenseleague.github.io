@@ -83,7 +83,7 @@
       [13, 'Building a DCF model of lunch options.', 'Modeling'],
       [17, 'Announcing that "the yield curve is basically screaming at us."', 'Briefing'],
       [20, 'Pricing sanctions risk into the dinner bill.', 'Modeling'],
-      [23, 'Reorganizing CFA Level II flashcards for the fourth time.', 'Studying (claims)']
+      [23, 'Correcting an online map that labels them "the Falklands."', 'Diplomatic action']
     ]
   };
   function statusFor(list) {
@@ -164,7 +164,8 @@
       'Brookings has still not called back. Situation being monitored.',
       'An analyst said "it\'s more complicated than that." Unclear who started it.',
       'New publication drafted. Title is longer than the abstract.',
-      'Teuscher reorganizes his flashcards. Studying is technically underway.',
+      'Someone called them "the Falklands" in the group chat. Teuscher has requested a formal correction.',
+      'Teuscher explains the dólar blue to Karas. Karas asks for a map of it.',
       'Karas finds a footnote inside a footnote. Morale is high.'
     ];
     var used = [];
