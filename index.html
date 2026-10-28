@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LTN Defense League — Independent Analysis, Unfunded Since 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #16233a;
+    --navy-deep: #0f1a2b;
+    --parchment: #f1ecdd;
+    --parchment-2: #e8e1cc;
+    --maroon: #7c2f2f;
+    --maroon-bright: #9c3b3b;
+    --brass: #b8952f;
+    --ink: #21201b;
+    --slate: #5b6779;
+    --rule: rgba(22,35,58,0.14);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'Source Serif 4', serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    color:var(--navy);
+  }
+  .mono{
+    font-family:'JetBrains Mono', monospace;
+    letter-spacing:0.04em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 28px;}
+
+  /* Classification banner */
+  .classband{
+    background:var(--navy-deep);
+    color:var(--parchment-2);
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-align:center;
+    padding:7px 10px;
+    text-transform:uppercase;
+  }
+  .classband span{opacity:0.55;}
+
+  /* Header */
+  header{
+    background:var(--parchment);
+    border-bottom:1px solid var(--rule);
+    position:sticky; top:0; z-index:50;
+    backdrop-filter:blur(6px);
+  }
+  .headerbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+    max-width:1080px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand .seal{width:38px; height:38px; flex-shrink:0;}
+  .brand-text{line-height:1.1;}
+  .brand-text .name{font-family:'Playfair Display', serif; font-weight:700; font-size:17px; color:var(--navy);}
+  .brand-text .sub{font-family:'JetBrains Mono', monospace; font-size:9.5px; letter-spacing:0.1em; color:var(--slate); text-transform:uppercase;}
+  nav{display:flex; gap:28px; font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase;}
+  nav a{text-decoration:none; color:var(--navy); opacity:0.75; transition:opacity .15s;}
+  nav a:hover{opacity:1;}
+  @media (max-width:720px){ nav{display:none;} }
+
+  /* Hero */
+  .hero{
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(184,149,47,0.10), transparent),
+      var(--parchment);
+    padding:88px 0 72px;
+    border-bottom:1px solid var(--rule);
+  }
+  .hero-inner{display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--maroon); margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:22px; height:1px; background:var(--maroon);}
+  .hero h1{font-size:52px; line-height:1.06; margin-bottom:20px; max-width:640px;}
+  .hero h1 em{font-style:italic; color:var(--maroon);}
+  .hero p.lede{font-size:18px; color:var(--slate); max-width:520px; margin-bottom:28px;}
+  .hero-actions{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:13px 24px; font-family:'JetBrains Mono', monospace;
+    font-size:12px; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none;
+    border:1px solid var(--navy); color:var(--navy); transition:all .15s;
+  }
+  .btn.solid{background:var(--navy); color:var(--parchment);}
+  .btn.solid:hover{background:var(--navy-deep);}
+  .btn:not(.solid):hover{background:var(--navy); color:var(--parchment);}
+
+  .seal-block{text-align:center; flex-shrink:0;}
+  .seal-big{width:150px; height:150px;}
+  .seal-caption{font-family:'JetBrains Mono', monospace; font-size:9.5px; letter-spacing:0.1em; color:var(--slate); margin-top:10px; text-transform:uppercase;}
+  @media (max-width:820px){
+    .hero-inner{grid-template-columns:1fr;}
+    .hero h1{font-size:38px;}
+    .seal-block{order:-1;}
+    .seal-big{width:96px; height:96px;}
+  }
+
+  /* Stat strip */
+  .statstrip{
+    background:var(--navy); color:var(--parchment);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .stats{display:grid; grid-template-columns:repeat(4,1fr); padding:26px 0;}
+  .stat{text-align:center; border-left:1px solid rgba(255,255,255,0.12); padding:0 12px;}
+  .stat:first-child{border-left:none;}
+  .stat .num{font-family:'Playfair Display', serif; font-weight:800; font-size:30px; color:var(--brass);}
+  .stat .label{font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(241,236,221,0.65); margin-top:4px;}
+  @media (max-width:640px){ .stats{grid-template-columns:repeat(2,1fr); row-gap:20px;} }
+
+  /* Section generic */
+  section{padding:80px 0;}
+  .section-head{margin-bottom:44px;}
+  .section-head .eyebrow{margin-bottom:12px;}
+  .section-head h2{font-size:32px;}
+  .section-head p{color:var(--slate); max-width:560px; font-size:16px; margin-top:10px;}
+
+  /* Mission */
+  .mission{border-bottom:1px solid var(--rule);}
+  .mission-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:start;}
+  .mission blockquote{
+    font-family:'Playfair Display', serif; font-style:italic; font-weight:500;
+    font-size:24px; line-height:1.4; color:var(--navy); border-left:3px solid var(--maroon);
+    padding-left:22px; margin-bottom:22px;
+  }
+  .mission p{color:#3a3a35; font-size:16px; margin-bottom:14px;}
+  .doctrine-list{list-style:none;}
+  .doctrine-list li{
+    display:flex; gap:14px; padding:16px 0; border-bottom:1px solid var(--rule);
+  }
+  .doctrine-list li:last-child{border-bottom:none;}
+  .doctrine-list .idx{font-family:'JetBrains Mono', monospace; color:var(--maroon); font-weight:700; font-size:13px; flex-shrink:0; width:20px;}
+  .doctrine-list strong{display:block; color:var(--navy); font-family:'Source Serif 4'; font-size:15.5px; margin-bottom:3px;}
+  .doctrine-list span{color:var(--slate); font-size:14px;}
+  @media (max-width:820px){ .mission-grid{grid-template-columns:1fr;} }
+
+  /* Scholars */
+  .scholars{background:var(--parchment-2); border-bottom:1px solid var(--rule);}
+  .scholar-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  @media (max-width:820px){ .scholar-grid{grid-template-columns:1fr;} }
+  .scholar-card{
+    background:var(--parchment); border:1px solid var(--rule); padding:32px;
+    position:relative;
+  }
+  .scholar-top{display:flex; gap:18px; align-items:flex-start; margin-bottom:18px;}
+  .avatar{
+    width:64px; height:64px; border-radius:50%; flex-shrink:0;
+    background:var(--navy); display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display', serif; font-weight:700; color:var(--brass); font-size:22px;
+    border:2px solid var(--brass);
+  }
+  .scholar-name{font-size:20px; margin-bottom:2px;}
+  .scholar-title{font-family:'JetBrains Mono', monospace; font-size:11px; color:var(--maroon); letter-spacing:0.04em; text-transform:uppercase;}
+  .scholar-card p{font-size:15px; color:#3f3f38; margin-bottom:12px;}
+  .cred-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .cred{
+    font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.05em;
+    text-transform:uppercase; border:1px solid var(--rule); padding:5px 10px; color:var(--slate);
+  }
+
+  /* Publications */
+  .pubs{border-bottom:1px solid var(--rule);}
+  .pub-list{border-top:1px solid var(--rule);}
+  .pub{
+    display:grid; grid-template-columns:70px 1fr auto; gap:20px; align-items:baseline;
+    padding:24px 0; border-bottom:1px solid var(--rule);
+  }
+  .pub .pnum{font-family:'JetBrains Mono', monospace; color:var(--maroon); font-size:13px;}
+  .pub .ptitle{font-size:18px; color:var(--navy); font-weight:600; margin-bottom:6px; font-family:'Source Serif 4';}
+  .pub .pabs{font-size:14px; color:var(--slate);}
+  .pub .ptag{font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--slate); text-transform:uppercase; white-space:nowrap;}
+  @media (max-width:640px){ .pub{grid-template-columns:1fr; gap:6px;} .pub .ptag{justify-self:flex-start;} }
+
+  /* Press */
+  .press{background:var(--navy); color:var(--parchment-2);}
+  .press .eyebrow{color:var(--brass);}
+  .press .eyebrow::before{background:var(--brass);}
+  .press .section-head h2{color:var(--parchment);}
+  .press .section-head p{color:rgba(241,236,221,0.6);}
+  .press-box{
+    border:1px dashed rgba(241,236,221,0.3); padding:44px; text-align:center;
+  }
+  .press-box .big{font-family:'Playfair Display', serif; font-weight:800; font-size:46px; color:var(--brass); margin-bottom:8px;}
+  .press-box p{color:rgba(241,236,221,0.7); font-size:15px; max-width:480px; margin:0 auto;}
+
+  /* Contact */
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  @media (max-width:820px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-card{border:1px solid var(--rule); padding:30px;}
+  .contact-card h3{font-size:19px; margin-bottom:10px;}
+  .contact-card p{font-size:14.5px; color:var(--slate); margin-bottom:6px;}
+  .contact-card .status{
+    display:inline-block; margin-top:14px; font-family:'JetBrains Mono', monospace;
+    font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; padding:6px 12px;
+    background:rgba(124,47,47,0.08); color:var(--maroon); border:1px solid rgba(124,47,47,0.25);
+  }
+
+  footer{
+    background:var(--navy-deep); color:rgba(241,236,221,0.5);
+    padding:36px 0; font-family:'JetBrains Mono', monospace; font-size:11px;
+    text-align:center; letter-spacing:0.04em;
+  }
+  footer strong{color:var(--parchment-2);}
+</style>
+</head>
+<body>
+
+  <div class="classband"><span>UNCLASSIFIED // FOR PUBLIC RELEASE</span> &nbsp;·&nbsp; DISTRO: ANYONE WHO STUMBLES ON THIS SITE &nbsp;·&nbsp; STAFF ON DUTY: 2</div>
+
+  <header>
+    <div class="headerbar">
+      <div class="brand">
+        <svg class="seal" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#16233a" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="39" fill="none" stroke="#b8952f" stroke-width="1.2"/>
+          <path d="M50 20 L58 42 L82 42 L62 56 L70 78 L50 64 L30 78 L38 56 L18 42 L42 42 Z" fill="#7c2f2f" opacity="0.9"/>
+          <circle cx="50" cy="50" r="10" fill="#16233a"/>
+          <text x="50" y="54" text-anchor="middle" font-family="Playfair Display, serif" font-weight="700" font-size="11" fill="#f1ecdd">LTN</text>
+        </svg>
+        <div class="brand-text">
+          <div class="name">LTN Defense League</div>
+          <div class="sub">Est. 2026 · Analysts: 2</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#doctrine">Doctrine</a>
+        <a href="#scholars">Scholars</a>
+        <a href="#publications">Publications</a>
+        <a href="#press">Press</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="eyebrow">Independent Security &amp; Economic Analysis</div>
+        <h1>Rigorous geopolitical judgment,<br><em>unburdened</em> by a research staff.</h1>
+        <p class="lede">The LTN Defense League is a two-person think tank producing the kind of confident, well-sourced-sounding analysis usually associated with institutions ten times our size. We have no interns. We are the interns.</p>
+        <div class="hero-actions">
+          <a href="#publications" class="btn solid">Read Our Publications</a>
+          <a href="#contact" class="btn">Request a Briefing</a>
+        </div>
+      </div>
+      <div class="seal-block">
+        <svg class="seal-big" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#16233a" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="39" fill="none" stroke="#b8952f" stroke-width="1.2"/>
+          <path d="M50 20 L58 42 L82 42 L62 56 L70 78 L50 64 L30 78 L38 56 L18 42 L42 42 Z" fill="#7c2f2f" opacity="0.9"/>
+          <circle cx="50" cy="50" r="10" fill="#16233a"/>
+          <text x="50" y="54" text-anchor="middle" font-family="Playfair Display, serif" font-weight="700" font-size="11" fill="#f1ecdd">LTN</text>
+        </svg>
+        <div class="seal-caption">Official Seal, Self-Designed</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="statstrip">
+    <div class="wrap stats">
+      <div class="stat"><div class="num">2</div><div class="label">Full-Time Scholars</div></div>
+      <div class="stat"><div class="num">0</div><div class="label">Government Contracts</div></div>
+      <div class="stat"><div class="num">1</div><div class="label">Group Chat, Doubling as HQ</div></div>
+      <div class="stat"><div class="num">∞</div><div class="label">Confidence Per Capita</div></div>
+    </div>
+  </div>
+
+  <section class="mission" id="doctrine">
+    <div class="wrap mission-grid">
+      <div>
+        <div class="eyebrow">Founding Doctrine</div>
+        <blockquote>"Someone has to say the quiet part on a nicely designed website, and Brookings wasn't returning our calls."</blockquote>
+        <p>The League was founded on the belief that sound strategic analysis shouldn't require a board of directors, an endowment, or peer review — just two people with strong opinions, a shared Google Doc, and a willingness to publish on the internet before anyone can stop them.</p>
+        <p>We are independent in the fullest sense: independently funded (by our own savings, dwindling), independently staffed (by us), and independently reviewed (also by us).</p>
+      </div>
+      <ul class="doctrine-list">
+        <li><span class="idx">01</span><div><strong>Analysis Over Access</strong><span>We were never going to get access anyway.</span></div></li>
+        <li><span class="idx">02</span><div><strong>Speed Over Consensus</strong><span>There are only two of us, so consensus takes about four minutes.</span></div></li>
+        <li><span class="idx">03</span><div><strong>Conviction Over Caveats</strong><span>Hedging is for people with something to lose.</span></div></li>
+        <li><span class="idx">04</span><div><strong>Publish, Then Panic</strong><span>Our internal review process, in that order.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="scholars" id="scholars">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Our People</div>
+        <h2>The Full Roster</h2>
+        <p>Two scholars. No support staff. No exceptions.</p>
+      </div>
+      <div class="scholar-grid">
+        <div class="scholar-card">
+          <div class="scholar-top">
+            <div class="avatar">JK</div>
+            <div>
+              <div class="scholar-name">Jackson Karas</div>
+              <div class="scholar-title">Co-Founder &amp; Director of Analysis</div>
+            </div>
+          </div>
+          <p>Jackson previously worked at the Institute for the Study of War, where he tracked conflicts most people couldn't find on a map, for an audience mostly made up of other people who study war. He now applies that same granular, source-heavy rigor to the League's core output: strongly worded assessments that no government agency asked for and no government agency reads.</p>
+          <p>He believes every crisis can be explained with the right map, the right timeline, and enough confidence in his own voice.</p>
+          <div class="cred-row">
+            <span class="cred">Ex-ISW</span>
+            <span class="cred">Map Enthusiast</span>
+            <span class="cred">Cites Primary Sources</span>
+          </div>
+        </div>
+        <div class="scholar-card">
+          <div class="scholar-top">
+            <div class="avatar">ST</div>
+            <div>
+              <div class="scholar-name">Sebastian Teuscher</div>
+              <div class="scholar-title">Co-Founder &amp; Chief Economic Officer</div>
+            </div>
+          </div>
+          <p>Sebastian passed the CFA Level I exam and then, after absorbing what colleagues describe as "approximately 1,000" job rejections with remarkable composure, concluded that the finance industry simply wasn't ready for his blend of discounted cash flow modeling and unsolicited geopolitical commentary.</p>
+          <p>He now serves as the League's self-appointed authority on sanctions regimes, the bond market's feelings, and why "the yield curve is basically screaming at us."</p>
+          <div class="cred-row">
+            <span class="cred">CFA Level I</span>
+            <span class="cred">1,000 Rejections</span>
+            <span class="cred">Reads the Fed Minutes for Fun</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pubs" id="publications">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Selected Publications</div>
+        <h2>Research No One Commissioned</h2>
+        <p>Peer review is handled internally, over text message, usually within the hour.</p>
+      </div>
+      <div class="pub-list">
+        <div class="pub">
+          <div class="pnum">No. 04</div>
+          <div>
+            <div class="ptitle">Escalation Dynamics in the Group Chat: A Framework</div>
+            <div class="pabs">A two-party model of how a disagreement about a headline becomes a 40-message thread by 1 a.m.</div>
+          </div>
+          <div class="ptag">Karas · Teuscher</div>
+        </div>
+        <div class="pub">
+          <div class="pnum">No. 03</div>
+          <div>
+            <div class="ptitle">Why Everyone Else Is Wrong About the Current Thing</div>
+            <div class="pabs">A comprehensive rebuttal of every major outlet, written before either author has finished their coffee.</div>
+          </div>
+          <div class="ptag">Karas</div>
+        </div>
+        <div class="pub">
+          <div class="pnum">No. 02</div>
+          <div>
+            <div class="ptitle">The Return of Great Power Competition (and Other Things We Say at Parties)</div>
+            <div class="pabs">On the enduring social utility of sounding like you understand the Thucydides Trap.</div>
+          </div>
+          <div class="ptag">Karas · Teuscher</div>
+        </div>
+        <div class="pub">
+          <div class="pnum">No. 01</div>
+          <div>
+            <div class="ptitle">A Net Assessment of Sebastian's Emotional State Ahead of the CFA Level II Deadline</div>
+            <div class="pabs">Founding paper of the League. Methodology has not been replicated, mostly for Sebastian's sake.</div>
+          </div>
+          <div class="ptag">Teuscher</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="press" id="press">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">In The News</div>
+        <h2>Media Coverage</h2>
+        <p>An honest accounting of our media footprint to date.</p>
+      </div>
+      <div class="press-box">
+        <div class="big">0</div>
+        <p>Media inquiries received, television appearances made, and cable news chyrons featuring our names. We remain available on short notice.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Get Involved</div>
+        <h2>Contact the League</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Media &amp; Briefing Requests</h3>
+          <p>For interviews, quotes, or a briefing on any topic — we will have an opinion regardless of expertise.</p>
+          <p>press@ltndefenseleague.example</p>
+          <span class="status">Response time: same day, we're just at home</span>
+        </div>
+        <div class="contact-card">
+          <h3>Careers</h3>
+          <p>The League is not currently hiring, on account of (a) budget constraints and (b) there being only two of us, and neither wanting a boss.</p>
+          <p>We will, however, accept a third co-founder with a strong LinkedIn banner.</p>
+          <span class="status">Status: closed indefinitely</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      &copy; 2026 <strong>LTN Defense League</strong>. All rights reserved, all opinions unpaid.<br>
+      Not affiliated with, endorsed by, or taken seriously by any actual government body.
+    </div>
+  </footer>
+
+</body>
+</html>
