@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Threat Board — LTN Defense League</title>
+<meta name="description" content="Real-time monitoring of the LTN Defense League's alert level, analysts, and the yield curve's emotional state.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="classband"><span>UNCLASSIFIED // FOR PUBLIC RELEASE</span> &nbsp;·&nbsp; FEED: LIVE-ISH &nbsp;·&nbsp; ACCURACY: SPIRITUAL</div>
+
+  <header>
+    <div class="headerbar">
+      <a class="brand" href="index.html">
+        <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#16233a" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="39" fill="none" stroke="#b8952f" stroke-width="1.2"/>
+          <path d="M50 20 L58 42 L82 42 L62 56 L70 78 L50 64 L30 78 L38 56 L18 42 L42 42 Z" fill="#7c2f2f" opacity="0.9"/>
+          <circle cx="50" cy="50" r="10" fill="#16233a"/>
+          <text x="50" y="54" text-anchor="middle" font-family="Playfair Display, serif" font-weight="700" font-size="11" fill="#f1ecdd">LTN</text>
+        </svg>
+        <div class="brand-text">
+          <div class="name">LTN Defense League</div>
+          <div class="sub">Est. 2026 · Analysts: 2</div>
+        </div>
+      </a>
+      <button class="navtoggle" aria-expanded="false">Menu</button>
+      <nav class="main">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="threat-board.html" class="live active">Threat Board</a>
+        <a href="fellowship.html">Fellowship</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span>LEAGUE: Analysts agree on something; scholars call it "historic"</span>
+      <span>BREAKING: Endowment remains hypothetical</span>
+      <span>MARKETS: Yield curve declines to comment, continues screaming</span>
+      <span>DIPLOMACY: Brookings yet to return call; situation being monitored</span>
+      <span>STAFFING: Headcount holds steady at 2 for record ninth consecutive month</span>
+      <span>CARTOGRAPHY: New map published; old map "still valid, just different"</span>
+      <span>PRESS: Media inquiries unchanged at zero</span>
+    </div>
+  </div>
+
+  <section class="pagehero">
+    <div class="wrap">
+      <div class="eyebrow">Live Situation Room</div>
+      <h1>The Threat Board</h1>
+      <p>Real-time monitoring of everything that matters to the League, which is mostly the League. Readings update automatically. Alert levels are set by your local time, because that is when things happen to us.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap board">
+
+      <div class="panel wide">
+        <div class="panel-label"><span>League Alert Level · LEAGUECON</span><span class="livedot">Live</span></div>
+        <div class="con-scale">
+          <div data-lvl="1">1</div><div data-lvl="2">2</div><div data-lvl="3">3</div><div data-lvl="4">4</div><div data-lvl="5">5</div>
+        </div>
+        <div class="con-title" data-con-title>Morning headline review underway</div>
+        <p class="con-desc" data-con-desc>Coffee has been consumed. Headlines are being skimmed with visibly growing disapproval.</p>
+        <p class="subnum" style="margin-top:12px;">LEAGUECON 5 (all calm) has never been reached and is considered theoretical.</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-label"><span>Time Without a Government Contract</span><span class="livedot">Live</span></div>
+        <div class="bignum brass" id="no-contract">—</div>
+        <p class="subnum">Counting since January 1, 2026. Personal best, every second.</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-label"><span>Analyst Status</span><span class="livedot">Live</span></div>
+        <div class="analyst" data-analyst="jk">
+          <div class="avatar">JK</div>
+          <div><strong>Jackson Karas</strong><div class="doing">—</div><span class="badge">—</span></div>
+        </div>
+        <div class="analyst" data-analyst="st">
+          <div class="avatar">ST</div>
+          <div><strong>Sebastian Teuscher</strong><div class="doing">—</div><span class="badge">—</span></div>
+        </div>
+      </div>
+
+      <div class="panel third">
+        <div class="panel-label"><span>Unsolicited Opinions Issued</span></div>
+        <div class="bignum" id="opinions">—</div>
+        <p class="subnum">Rate: about 2.7 per hour, including while asleep.</p>
+      </div>
+      <div class="panel third">
+        <div class="panel-label"><span>Primary Sources Cited (Karas)</span></div>
+        <div class="bignum" id="sources">—</div>
+        <p class="subnum">Each one more primary than the last.</p>
+      </div>
+      <div class="panel third">
+        <div class="panel-label"><span>"The Yield Curve" Mentions (Teuscher)</span></div>
+        <div class="bignum" id="yieldcurve">—</div>
+        <p class="subnum">Unprompted mentions only.</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-label"><span>Yield Curve Emotional State</span><span class="livedot">Live</span></div>
+        <div class="con-title" id="mood-label">—</div>
+        <div class="gauge"><div class="gauge-fill" id="mood-fill" style="width:50%"></div></div>
+        <div class="gauge-scale"><span>Calm</span><span>Distress index: <b id="mood-num">—</b></span><span>Screaming</span></div>
+        <canvas class="spark" id="spark" aria-label="Sparkline of the yield curve's emotional state"></canvas>
+        <p class="subnum">Proprietary model by S. Teuscher. Not investment advice. Barely advice at all.</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-label"><span>Situation Log</span><span class="livedot">Live</span></div>
+        <ul class="log" id="log"></ul>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="threat-board.html">Threat Board</a>
+        <a href="fellowship.html">Fellowship</a>
+      </nav>
+      &copy; 2026 <strong>LTN Defense League</strong>. All rights reserved, all opinions unpaid.<br>
+      All figures on this page are made up, which puts them on par with most forecasts.
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

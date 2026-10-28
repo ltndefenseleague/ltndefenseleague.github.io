@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visiting Fellowship — LTN Defense League</title>
+<meta name="description" content="The LTN Defense League's unpaid, unofficial, entirely ceremonial Visiting Fellowship. Take the eligibility quiz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="classband"><span>UNCLASSIFIED // FOR PUBLIC RELEASE</span> &nbsp;·&nbsp; STIPEND: $0.00 &nbsp;·&nbsp; PRESTIGE: SELF-REPORTED</div>
+
+  <header>
+    <div class="headerbar">
+      <a class="brand" href="index.html">
+        <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#16233a" stroke-width="2.5"/>
+          <circle cx="50" cy="50" r="39" fill="none" stroke="#b8952f" stroke-width="1.2"/>
+          <path d="M50 20 L58 42 L82 42 L62 56 L70 78 L50 64 L30 78 L38 56 L18 42 L42 42 Z" fill="#7c2f2f" opacity="0.9"/>
+          <circle cx="50" cy="50" r="10" fill="#16233a"/>
+          <text x="50" y="54" text-anchor="middle" font-family="Playfair Display, serif" font-weight="700" font-size="11" fill="#f1ecdd">LTN</text>
+        </svg>
+        <div class="brand-text">
+          <div class="name">LTN Defense League</div>
+          <div class="sub">Est. 2026 · Analysts: 2</div>
+        </div>
+      </a>
+      <button class="navtoggle" aria-expanded="false">Menu</button>
+      <nav class="main">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="threat-board.html" class="live">Threat Board</a>
+        <a href="fellowship.html" class="active">Fellowship</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pagehero">
+    <div class="wrap">
+      <div class="eyebrow">Visiting Fellowship Program</div>
+      <h1>Become a <em>Senior Non-Resident</em> Fellow. Today.</h1>
+      <p>The League's fellowship is unpaid, unofficial and entirely ceremonial. It does, however, come with a title long enough to fill an entire LinkedIn headline, which is the real currency of the think tank world.</p>
+    </div>
+  </section>
+
+  <section class="bordered">
+    <div class="wrap two-col">
+      <div>
+        <div class="eyebrow">What You Get</div>
+        <ul class="checklist">
+          <li>The title "Senior Non-Resident Fellow." Non-resident because we don't have a building.</li>
+          <li>Permission to say "at the League, we think…" at dinner parties.</li>
+          <li>Read access to the group chat's pinned messages. There is one pinned message. It is a map.</li>
+          <li>One (1) annual performance review, conducted by yourself.</li>
+          <li>Eligibility for the League's distinguished honor, the "Called It" Award, awarded retroactively to whoever called it.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">What You Don't Get</div>
+        <ul class="checklist no">
+          <li>Money. Any amount of it.</li>
+          <li>An office, desk, badge, lanyard or parking space.</li>
+          <li>A vote on the board. The board is two people and they like it that way.</li>
+          <li>Access to the actual group chat. Some things are classified.</li>
+          <li>Any guarantee of being taken seriously. We've checked, and we can't offer that to ourselves either.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt bordered">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Step 1 of 1</div>
+        <h2>Eligibility Assessment</h2>
+        <p>Four questions. Answers are scored on our proprietary Confidence-to-Credentials Index. Nothing you enter leaves this page; the League has no servers, and barely has laptops.</p>
+      </div>
+      <form class="quiz" id="quiz">
+        <fieldset>
+          <legend>1. A friend asks you about a country you've never studied. You:</legend>
+          <label><input type="radio" name="q1" value="0">Say "I don't really know much about that."</label>
+          <label><input type="radio" name="q1" value="1">Google it quickly under the table.</label>
+          <label><input type="radio" name="q1" value="2">Say "It's more complicated than people think."</label>
+          <label><input type="radio" name="q1" value="3">Deliver a 20-minute briefing and ask if they have a whiteboard.</label>
+        </fieldset>
+        <fieldset>
+          <legend>2. How many browser tabs do you currently have open?</legend>
+          <label><input type="radio" name="q2" value="0">Fewer than 5</label>
+          <label><input type="radio" name="q2" value="1">5 to 20</label>
+          <label><input type="radio" name="q2" value="2">20 to 60, at least 3 of them maps</label>
+          <label><input type="radio" name="q2" value="3">The browser has stopped showing me the number</label>
+        </fieldset>
+        <fieldset>
+          <legend>3. Your stance on caveats:</legend>
+          <label><input type="radio" name="q3" value="0">Essential for responsible analysis</label>
+          <label><input type="radio" name="q3" value="1">Useful in moderation</label>
+          <label><input type="radio" name="q3" value="2">I put them in footnotes nobody reads</label>
+          <label><input type="radio" name="q3" value="3">Hedging is for people with something to lose</label>
+        </fieldset>
+        <fieldset>
+          <legend>4. Which best describes your relationship with the yield curve?</legend>
+          <label><input type="radio" name="q4" value="0">What's a yield curve?</label>
+          <label><input type="radio" name="q4" value="1">I've heard it's inverted. I'm told this is bad.</label>
+          <label><input type="radio" name="q4" value="2">I check it more often than my texts.</label>
+          <label><input type="radio" name="q4" value="3">It talks to me. Sometimes it screams.</label>
+        </fieldset>
+        <button type="submit" class="btn solid">Submit Assessment</button>
+        <div class="verdict" id="verdict" role="status" aria-live="polite">
+          <h3></h3>
+          <p></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Frequently Asked</div>
+        <h2>Questions We Have Been Asked (Once)</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Is this a real fellowship?</summary>
+          <p>It is exactly as real as the League. Interpret that however you like.</p>
+        </details>
+        <details>
+          <summary>Can I put it on my résumé?</summary>
+          <p>We can't stop you. One of our co-founders has submitted roughly 1,000 résumés and can confirm that nobody checks.</p>
+        </details>
+        <details>
+          <summary>Is there an application deadline?</summary>
+          <p>Applications are accepted on a rolling basis, which is a professional way of saying we haven't thought about it.</p>
+        </details>
+        <details>
+          <summary>What happens after I'm accepted?</summary>
+          <p>Nothing. That's the beauty of it.</p>
+        </details>
+        <details>
+          <summary>Can I become a co-founder instead?</summary>
+          <p>The League will accept a third co-founder with a strong LinkedIn banner. Board approval required (estimated deliberation time: four minutes).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="threat-board.html">Threat Board</a>
+        <a href="fellowship.html">Fellowship</a>
+      </nav>
+      &copy; 2026 <strong>LTN Defense League</strong>. All rights reserved, all opinions unpaid.<br>
+      Fellowship titles are honorary, unofficial, and carry no weight in any known jurisdiction.
+    </div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
