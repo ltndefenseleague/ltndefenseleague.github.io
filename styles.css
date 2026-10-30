@@ -341,3 +341,51 @@ footer nav a:hover{color:var(--parchment);}
 .tier p{font-size:14.5px; color:var(--slate);}
 .fineprint{margin-top:28px; max-width:640px; font-size:13.5px; color:var(--slate); border-top:1px solid var(--rule); padding-top:16px;}
 .paypal-box{max-width:420px; background:var(--parchment); border:1px solid var(--rule); padding:24px;}
+
+/* Bronze player cards (scholar bios) */
+  .fut-card{
+    --b1:#f0c896; --b2:#c48a52; --b3:#8c5529; --ink:#3a2210;
+    width:250px; height:380px; position:relative; color:var(--ink);
+    font-family:'Oswald', sans-serif;
+    clip-path:polygon(14% 0, 86% 0, 100% 6%, 100% 87%, 50% 100%, 0 87%, 0 6%);
+    background:
+      radial-gradient(ellipse 120% 70% at 70% 15%, rgba(255,235,205,0.55), transparent 60%),
+      linear-gradient(155deg, var(--b1) 0%, var(--b2) 38%, var(--b3) 72%, #b97d47 100%);
+  }
+  .fut-card::before{
+    content:''; position:absolute; inset:7px;
+    clip-path:polygon(14% 0, 86% 0, 100% 6%, 100% 87%, 50% 100%, 0 87%, 0 6%);
+    border:1.5px solid rgba(58,34,16,0.35);
+    background:repeating-linear-gradient(115deg, rgba(255,255,255,0.05) 0 8px, transparent 8px 16px);
+  }
+  .fut-photo{
+    position:absolute; top:18px; right:4px; width:186px; height:190px;
+    background-size:cover; background-position:center top;
+    -webkit-mask-image:radial-gradient(ellipse 58% 62% at 54% 42%, #000 58%, transparent 100%);
+    mask-image:radial-gradient(ellipse 58% 62% at 54% 42%, #000 58%, transparent 100%);
+    mix-blend-mode:multiply;
+    filter:contrast(1.08) saturate(1.1);
+  }
+  .fut-meta{position:absolute; top:42px; left:26px; display:flex; flex-direction:column; align-items:center; gap:6px; z-index:2;}
+  .fut-ovr{font-size:44px; font-weight:700; line-height:0.9;}
+  .fut-pos{font-size:17px; font-weight:500; letter-spacing:0.04em;}
+  .fut-meta hr{width:30px; border:none; border-top:1.5px solid rgba(58,34,16,0.45);}
+  .fut-flag{width:30px; height:20px; box-shadow:0 0 0 1px rgba(58,34,16,0.35);}
+  .fut-club{width:30px; height:30px;}
+  .fut-name{
+    position:absolute; top:206px; left:0; right:0; text-align:center;
+    font-size:24px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+  }
+  .fut-name::after{content:''; display:block; width:70%; margin:4px auto 0; border-top:1.5px solid rgba(58,34,16,0.4);}
+  .fut-stats{
+    position:absolute; top:250px; left:34px; right:34px;
+    display:grid; grid-template-columns:1fr 1fr; column-gap:18px; row-gap:2px;
+    font-size:16px;
+  }
+  .fut-stats div{display:flex; gap:8px; align-items:baseline;}
+  .fut-stats b{font-weight:700; width:24px; flex-shrink:0; text-align:right;}
+  .fut-stats span{font-weight:500; letter-spacing:0.03em;}
+  .fut-stats .divider{position:absolute; left:50%; top:4px; bottom:4px; border-left:1.5px solid rgba(58,34,16,0.35);}
+  .fut-tag{position:absolute; bottom:22px; left:0; right:0; text-align:center; font-family:'JetBrains Mono', monospace; font-size:8.5px; letter-spacing:0.12em; text-transform:uppercase; opacity:0.7;}
+.scholar-top.has-card{flex-wrap:wrap; align-items:center; gap:24px;}
+.scholar-top .fut-card{flex-shrink:0;}
