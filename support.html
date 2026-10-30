@@ -46,7 +46,7 @@
       <h1>Your money. <em>Our</em> opinions.</h1>
       <p>Independent analysis isn't free. Technically it is, because we've been doing it for free, but we would like that to stop. Every contribution goes directly toward keeping two analysts caffeinated, online, and confidently wrong about fewer things.</p>
       <div class="hero-actions" style="margin-top:28px;">
-        <a href="mailto:BOD@LTNDefense.org?subject=I%20would%20like%20to%20fund%20the%20League" class="btn solid" data-donate>Donate Now</a>
+        <a href="#donate" class="btn solid">Donate Now</a>
         <a href="#foreign" class="btn">Foreign Governments: Click Here</a>
       </div>
     </div>
@@ -105,14 +105,16 @@
     </div>
   </section>
 
-  <section class="alt">
+  <section class="alt" id="donate">
     <div class="wrap">
       <div class="section-head" style="margin-bottom:24px;">
         <div class="eyebrow">Ready?</div>
         <h2>Make a Contribution</h2>
-        <p>Click below to give. For larger gifts, institutional partnerships, or questions about the Sovereign Tier, email the Board at <a href="mailto:BOD@LTNDefense.org">BOD@LTNDefense.org</a>.</p>
+        <p>Give securely through PayPal, Venmo or card below. For larger gifts, institutional partnerships, or questions about the Sovereign Tier, email the Board at <a href="mailto:BOD@LTNDefense.org">BOD@LTNDefense.org</a>.</p>
       </div>
-      <a href="mailto:BOD@LTNDefense.org?subject=I%20would%20like%20to%20fund%20the%20League" class="btn solid" data-donate>Donate Now</a>
+      <div class="paypal-box">
+        <div id="paypal-container-JR3Z4W4HPATN4"></div>
+      </div>
       <p class="fineprint">The fine print, said plainly: the LTN Defense League is not a registered charity, nonprofit or company. Donations go directly to its two founders, are not tax-deductible, and don't get you anything in return besides our gratitude. Please only give money you won't miss.</p>
     </div>
   </section>
@@ -132,5 +134,11 @@
   </footer>
 
 <script src="script.js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=BAAzhejElagUnTM_9MHEriOLZm_p0K-im-Zp6ThHItIwgBpA6Dvay5FhHjJ_0OTV0dUASfv3We5rPbL-6w&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "JR3Z4W4HPATN4",
+  }).render("#paypal-container-JR3Z4W4HPATN4")
+</script>
 </body>
 </html>
